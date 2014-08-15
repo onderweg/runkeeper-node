@@ -3,13 +3,13 @@ runkeeper-node
 
 Experimental Node.js library for RunKeeper Health Graph API, based originally off [runkeeper-js](https://github.com/mko/runkeeper-js).
 
-This is an early alpha version, with no support or guarantees. Feel free to fork and improve.
+This is an early alpha version, with no support or guarantees. Needs a bit of love and some tests. Feel free to fork and improve.
 
 Main changes/improvements compared to *runkeeper-js*:
 
-- Use of promises instead of callbacks
-- Method `get_authorization_code` added in authorization flow
-- Support for updates via POST/PUT requests
+- Use of promises (q) instead of callbacks.
+- Method `get_authorization_code` (step 1 of oAuth flow) added.
+- Support for updates via POST/PUT requests.
 
 ##Installation
 
@@ -83,7 +83,6 @@ run.auth(options, access_token_file).then(function(access_token, err) {
 
 		console.log(user);
 
-		// Retrieve list of all activities
 		return client.apiCall('GET', run.types.ActivityFeed, '/fitnessActivities');		
 
 	}).then(function(activities) {
