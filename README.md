@@ -7,9 +7,9 @@ This is an early alpha version, with no support or guarantees. Needs a bit of lo
 
 Main changes/improvements compared to *runkeeper-js*:
 
-- Use of promises (q) instead of callbacks.
+- Use of promises (via [Q](https://github.com/kriskowal/q)), instead of callbacks.
 - Method `get_authorization_code` (step 1 of oAuth flow) added.
-- Support for updates via POST/PUT requests.
+- Support for updates via POST/PUT requests. For example to changes activity notes.
 
 ##Installation
 
@@ -61,11 +61,12 @@ var options = exports.options = {
     api_domain : "api.runkeeper.com"
 };
 
-
+// This file is used to cache the retrieved access token.
+// Alternatively, you can add an access token manually to this file.
 var access_token_file = __dirname + "/access_token.json";
 
 run.auth(options, access_token_file).then(function(access_token) {	
-	// Create a Client, and set the client's Access Token. 
+	// Create a client, and set the client's Access Token. 
 	// Any future API Calls will be performed using the authorized user's access token. 
 	var client = new run.HealthGraph(options, access_token);
 	
