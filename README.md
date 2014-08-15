@@ -3,12 +3,12 @@ runkeeper-node
 
 Experimental Node.js library for RunKeeper Health Graph API, based originally off [runkeeper-js](https://github.com/mko/runkeeper-js).
 
-This is an early alpha version, with no support and guarantees. Feel free to fork and improve.
+This is an early alpha version, with no support or guarantees. Feel free to fork and improve.
 
-Main changes/improvements compared to node-runkeeper:
+Main changes/improvements compared to *runkeeper-js*:
 
 - Use of promises instead of callbacks
-- Method `get_authorization_code` in authorization flow
+- Method `get_authorization_code` added in authorization flow
 - Support for updates via POST/PUT requests
 
 ##Installation
@@ -20,6 +20,8 @@ To install: clone this repository and install from local directory:
 	$ npm install <path to cloned repository>
 
 ##Example
+
+Usage example:
 
 ```javascript
 
@@ -35,7 +37,7 @@ var options = exports.options = {
 
     // Client Secret (Required):  
     // This value is the OAuth 2.0 shared secret for your application.   
-    client_secret : '<Your Client secret',
+    client_secret : '<Your Client secret>',
 
     // Authorization URL (Optional, default will work for most apps):
     // This is the URL to which your application should redirect the user in order to authorize access to his or her RunKeeper account.   
@@ -73,7 +75,7 @@ run.auth(options, access_token_file).then(function(access_token, err) {
 	// Set the client's Access Token. Any future API Calls will be performed using the authorized user's access token. 
 	client.access_token = access_token;
 	
-	client.apiCall('GET', 'application/vnd.com.runkeeper.User+json', '/user').then(function(user) {
+	client.apiCall('GET', run.types.User, '/user').then(function(user) {
 		
 		return user;
 
@@ -100,3 +102,4 @@ Based on:
 - which was then forked by [Christine Yen](https://github.com/christineyen)
 - and then resurrected by [Michael Owens](https://github.com/mowens) as RunKeeper.js (`runkeeper-js` on NPM)
 - and then forked by [Michael Owens](https://github.com/mowens)
+- which inspired [me](https://github.com/onderweg/)
