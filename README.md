@@ -64,16 +64,10 @@ var options = exports.options = {
 
 var access_token_file = __dirname + "/access_token.json";
 
-run.auth(options, access_token_file).then(function(access_token, err) {	
-	if (err) {
-		console.log(err);
-		process.exit();	
-	}
-	// Create a Client
-	var client = new run.HealthGraph(options);
-
-	// Set the client's Access Token. Any future API Calls will be performed using the authorized user's access token. 
-	client.access_token = access_token;
+run.auth(options, access_token_file).then(function(access_token) {	
+	// Create a Client, and set the client's Access Token. 
+	// Any future API Calls will be performed using the authorized user's access token. 
+	var client = new run.HealthGraph(options, access_token);
 	
 	client.apiCall('GET', run.types.User, '/user').then(function(user) {
 		
@@ -86,9 +80,14 @@ run.auth(options, access_token_file).then(function(access_token, err) {
 
 		console.log(activities);
 
+	}, function(err) {
+
+		console.log(err);
+		process.exit();			
+
 	});
 	
-})	
+});	
 ```		
 
 ## Contributors
