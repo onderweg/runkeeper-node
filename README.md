@@ -77,17 +77,15 @@ run.auth(options, access_token_file).then(function(access_token, err) {
 	
 	client.apiCall('GET', run.types.User, '/user').then(function(user) {
 		
-		return user;
-
-	}).then(function(user) {
-
 		console.log(user);
 
-		return client.apiCall('GET', run.types.ActivityFeed, '/fitnessActivities');		
+		// Retrieve list of all activities
+		return client.apiCall('GET', run.types.ActivityFeed, user.fitness_activities );				
 
 	}).then(function(activities) {
 
 		console.log(activities);
+
 	});
 	
 })	
