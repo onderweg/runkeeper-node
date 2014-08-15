@@ -9,7 +9,7 @@ Main changes/improvements compared to *runkeeper-js*:
 
 - Use of promises (via [Q](https://github.com/kriskowal/q)), instead of callbacks.
 - Method `get_authorization_code` (step 1 of oAuth flow) added.
-- Support for updates via POST/PUT requests. For example to changes activity notes.
+- Support for updates via POST/PUT requests. For example to change activity notes.
 
 ##Installation
 
@@ -90,6 +90,12 @@ run.auth(options, access_token_file).then(function(access_token) {
 	
 });	
 ```		
+##Health Graph feature requests
+
+Health Graph feature reqeusts/ideas, to make this client more useful:
+
+- Support for PIN authentication in OAuh flow (like [Twitter](https://dev.twitter.com/docs/auth/pin-based-authorization)), to make it easer to authenticate from console apps.
+- Error responses in JSON format, instead of HTML.
 
 ## Contributors
 
@@ -98,5 +104,4 @@ Based on:
 - [node-runkeeper](https://github.com/marksoper/node-runkeeper) originally authored by [Mark Soper](https://github.com/marksoper/)
 - which was then forked by [Christine Yen](https://github.com/christineyen)
 - and then resurrected by [Michael Owens](https://github.com/mowens) as RunKeeper.js (`runkeeper-js` on NPM)
-- and then forked by [Michael Owens](https://github.com/mowens)
 - which inspired [me](https://github.com/onderweg/)
