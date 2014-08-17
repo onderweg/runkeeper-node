@@ -10,6 +10,7 @@ Main changes/improvements compared to *runkeeper-js*:
 - Use of promises (via [Q](https://github.com/kriskowal/q)), instead of callbacks.
 - Method `get_authorization_code` (step 1 of oAuth flow) added.
 - Support for updates via POST/PUT requests. For example to change activity notes.
+- Utility method to convert activity path to GeoJSON.
 
 ##Installation
 
@@ -18,6 +19,11 @@ This module is not (yet) availble on NPM.
 To install: clone this repository and install from local directory:
 
 	$ npm install <path to cloned repository>
+	
+##Module structure
+
+- Methods used to authenticate, and utility methods, like `toGeoJSON()` are module methods.
+- All methods that rely on authorized API access, are part of the module's `HealthGraph` object. You have to supply a valid access token to this object: `new hg = run.HealthGraph(options, access_token)`
 
 ##Example
 
