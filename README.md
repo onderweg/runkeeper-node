@@ -102,6 +102,7 @@ Health Graph feature reqeusts/ideas, to make this client more useful:
 
 - Support for PIN authentication in OAuh flow (like [Twitter](https://dev.twitter.com/docs/auth/pin-based-authorization)), to make it easer to authenticate from console apps.
 - Error responses in JSON format, instead of HTML.
+- Support for custom data object (key/values) in activity. Can be used for example to store weather data (temperature, humidity) for an activity by an external application.
 
 ## Contributors
 
@@ -111,3 +112,8 @@ Based on:
 - which was then forked by [Christine Yen](https://github.com/christineyen)
 - and then resurrected by [Michael Owens](https://github.com/mowens) as RunKeeper.js (`runkeeper-js` on NPM)
 - which inspired [me](https://github.com/onderweg/)
+
+## License
+
+This package is licensed under the [MIT License](http://www.opensource.org/licenses/mit-license.php).
+
