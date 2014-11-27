@@ -35,7 +35,7 @@ var run = require('runkeeper-node');
 
 // Set up your client's options
 // See: https://github.com/mko/runkeeper-js
-var options = exports.options = {
+var options = {
 
     // Client ID (Required): 
     // This value is the OAuth 2.0 client ID for your application.  
@@ -103,6 +103,7 @@ Health Graph feature reqeusts/ideas, to make this client more useful:
 - Support for PIN authentication in OAuh flow (like [Twitter](https://dev.twitter.com/docs/auth/pin-based-authorization)), to make it easer to authenticate from console apps. Or, as many other APIs support, make it possible to create access tokens form the API applications admin panel.
 - Error responses in JSON format, instead of HTML.
 - Support for custom data object (key/values) in activity. Can be used for example to store weather data (temperature, humidity) for an activity by an external application.
+- Fixed API URL endpoints, to avoid having to request the user object every instance, to get endpoint URLs.
 
 ## Contributors
 
