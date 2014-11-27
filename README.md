@@ -9,7 +9,7 @@ Main changes/improvements compared to *runkeeper-js*:
 
 - Use of promises (via [Q](https://github.com/kriskowal/q)), instead of callbacks.
 - Method `get_authorization_code` (step 1 of oAuth flow) added.
-- Support for updates via POST/PUT requests. For example to change activity notes.
+- Support for updates via POST/PUT requests. For example, to change activity notes.
 - Utility method to convert activity path to GeoJSON.
 
 ##Installation
@@ -100,7 +100,7 @@ run.auth(options, access_token_file).then(function(access_token) {
 
 Health Graph feature reqeusts/ideas, to make this client more useful:
 
-- Support for PIN authentication in OAuh flow (like [Twitter](https://dev.twitter.com/docs/auth/pin-based-authorization)), to make it easer to authenticate from console apps.
+- Support for PIN authentication in OAuh flow (like [Twitter](https://dev.twitter.com/docs/auth/pin-based-authorization)), to make it easer to authenticate from console apps. Or, as many other APIs support, make it possible to create access tokens form the API applications admin panel.
 - Error responses in JSON format, instead of HTML.
 - Support for custom data object (key/values) in activity. Can be used for example to store weather data (temperature, humidity) for an activity by an external application.
 

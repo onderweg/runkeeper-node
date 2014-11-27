@@ -8,14 +8,15 @@
     "url": "https://github.com/onderweg/runkeeper-node.git"
   },
   "author": "Gerwert",
-
-  "licenses": [{
-    "type": "MIT",
-    "url": "http://www.opensource.org/licenses/mit-license.php"
-  }],
-  
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ],
   "homepage": "https://github.com/onderweg/runkeeper-node",
   "devDependencies": {
+    "lodash": "^2.4.1",
     "open": "0.0.5",
     "q": "^1.0.1",
     "request": "^2.40.0"
