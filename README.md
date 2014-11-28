@@ -34,7 +34,7 @@ Usage example:
 var run = require('runkeeper-node');
 
 // Set up your client's options
-// See: https://github.com/mko/runkeeper-js
+// See also: https://github.com/mko/runkeeper-js
 var options = {
 
     // Client ID (Required): 
@@ -55,23 +55,18 @@ var options = {
 
     // Redirect URI (Optional but defaults to null, which means your app won't be able to use the getNewToken method):
     // This is the URL that RK sends user to after successful auth  
-    // URI naming based on Runkeeper convention 
     redirect_uri : 'http://localhost:8000',
 
     // Access Token (Optional, defaults to null):
     // When doing Client API Calls on behalf of a specific user (and not getting a new Access Token for the first time), set the user's Access Token here.
     access_token : null,
-
-    // API Domain (Optional, default will work for most apps):
-    // This is the FQDN (Fully qualified domain name) that is used in making API calls
-    api_domain : "api.runkeeper.com"
 };
 
 // This file is used to cache the retrieved access token.
 // Alternatively, you can add an access token manually to this file.
-var access_token_file = __dirname + "/access_token.json";
+var config_file = __dirname + "/config.json";
 
-run.auth(options, access_token_file).then(function(access_token) {	
+run.auth(options, config_file).then(function(access_token) {	
 	// Create a client, and set the client's Access Token. 
 	// Any future API Calls will be performed using the authorized user's access token. 
 	var client = new run.HealthGraph(options, access_token);
@@ -95,7 +90,12 @@ run.auth(options, access_token_file).then(function(access_token) {
 	});
 	
 });	
-```		
+```	
+
+Example config file:
+
+    {"access_token":"969d433d2bfe4696b41bfef11110273d"}
+
 ##Health Graph feature requests
 
 Health Graph feature reqeusts/ideas, to make this client more useful:
