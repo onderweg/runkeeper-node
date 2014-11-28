@@ -94,7 +94,7 @@ run.auth(options, config_file).then(function(access_token) {
 
 Example config file:
 
-    {"access_token":"969d433d2bfe4696b41bfef11110273d"}
+    {"access_token":"ac9d433d2b451696b41bfef110273d"}
 
 ##Health Graph feature requests
 
